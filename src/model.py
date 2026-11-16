@@ -7,7 +7,7 @@ import torch
 import torch.nn as nn
 from torch.nn.utils.rnn import pack_padded_sequence, pad_packed_sequence
 
-from src.common import PAD_IDX
+from common import PAD_IDX
 
 
 def make_norm(kind, dim):

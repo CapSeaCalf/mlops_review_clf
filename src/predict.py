@@ -19,8 +19,8 @@ import numpy as np
 import pandas as pd
 import torch
 
-from src.common import CLASSES, assign_classes, binary_entropy, clean_text, describe_rule, predict_texts_generic
-from src.model import build_model
+from common import CLASSES, assign_classes, binary_entropy, clean_text, describe_rule, predict_texts_generic
+from model import build_model
 
 ROOT = Path(__file__).resolve().parents[1]
 CKPT_VERSION = 1

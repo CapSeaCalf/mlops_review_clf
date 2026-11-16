@@ -25,9 +25,9 @@ from sklearn.metrics import accuracy_score, f1_score, roc_auc_score
 from sklearn.model_selection import train_test_split
 from torch.nn.utils.rnn import pad_sequence
 
-from src.common import PAD_IDX, UNK_IDX, assign_classes, describe_rule, predict_texts_generic
-from src.model import build_model
-from src.predict import CKPT_VERSION, resolve
+from common import PAD_IDX, UNK_IDX, assign_classes, describe_rule, predict_texts_generic
+from model import build_model
+from predict import CKPT_VERSION, resolve
 
 
 def set_seed(seed):
