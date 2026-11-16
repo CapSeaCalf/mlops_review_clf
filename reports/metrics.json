@@ -1,0 +1,34 @@
+{
+  "val": {
+    "n": 1966,
+    "acc": 0.8901,
+    "macro_f1": 0.7417,
+    "f1": {
+      "negative": 0.886,
+      "neutral": 0.3797,
+      "positive": 0.9593
+    },
+    "auc_pos_vs_neg": 0.9912
+  },
+  "test": {
+    "n": 1965,
+    "acc": 0.8707,
+    "macro_f1": 0.727,
+    "f1": {
+      "negative": 0.8729,
+      "neutral": 0.3636,
+      "positive": 0.9446
+    },
+    "auc_pos_vs_neg": 0.9912
+  },
+  "hand_test": {
+    "n": 272,
+    "acc": 0.9816,
+    "by_class": {
+      "negative": 1.0,
+      "neutral": 0.9888,
+      "positive": 0.957
+    }
+  },
+  "rule": "p < 0.150 -> neg, p >= 0.600 -> pos, між ними neutral"
+}

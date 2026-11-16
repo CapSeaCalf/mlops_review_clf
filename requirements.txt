@@ -1,0 +1,19 @@
+# Спочатку встановити CPU PyTorch окремо:
+# pip install torch --index-url https://download.pytorch.org/whl/cpu
+
+numpy
+pandas
+scikit-learn
+matplotlib
+jupyter
+notebook
+ipykernel
+python-dotenv
+dvc
+
+
+fastapi
+uvicorn
+mlflow
+pytest
+prometheus-client

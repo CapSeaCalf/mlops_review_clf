@@ -1,0 +1,60 @@
+seed: 42
+classes:
+- negative
+- neutral
+- positive
+artifact: sentiment_rnn.pt
+preprocessing:
+  restore_neg: true
+  max_len: 128
+  min_freq: 2
+model:
+  hidden_size: 256
+  num_layers: 2
+  head_dims:
+  - 256
+  - 128
+  - 64
+  emb_dropout: 0.2
+  rnn_dropout: 0.2
+  head_dropout: 0.3
+  norm: batch
+  freeze_emb: true
+  rnn_type: gru
+  emb_norm: true
+  out_norm: true
+  pool_norm: true
+  self_attn: true
+  attn_pool: true
+  attn_heads: 4
+  attn_dropout: 0.1
+embeddings:
+  name: fasttext-wiki-news-subwords-300
+  dim: 300
+  vocab_size: 4369
+training:
+  epochs: 30
+  lr: 0.001
+  weight_decay: 0.05
+  clip_norm: 1.0
+  patience: 5
+  min_delta: 0.002
+  weight_power: 1.0
+  smooth: 0.05
+  batch_size: 64
+  scalar_target:
+    0: 0.0
+    1: 0.5
+    2: 1.0
+rule:
+  type: asym
+  lo: 0.15
+  hi: 0.6
+  mode: fixed
+labels:
+  mode: vote
+  vote_h_thr: 0.8
+  judges:
+    q1: cardiffnlp/twitter-roberta-base-sentiment-latest
+    q2: siebert/sentiment-roberta-large-english
+    q3: nlptown/bert-base-multilingual-uncased-sentiment
