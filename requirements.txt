@@ -16,4 +16,5 @@ fastapi
 uvicorn
 mlflow
 pytest
-prometheus-clientpyyaml
+prometheus-client
+pyyaml
